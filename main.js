@@ -61,9 +61,18 @@ let seznam = [
 const btnAdd = document.querySelector("#btnAdd");
 btnAdd.addEventListener("click", pridejPolozku);
 
-//1 nejak zovolat funkci vypisSeznam s argumentem seznam
-//2 aby funkce vypisSeznam vypsala jednotlive polozky
+//:) 1 nejak zovolat funkci vypisSeznam s argumentem seznam 
+//:) 2 aby funkce vypisSeznam vypsala jednotlive polozky zavolanim fce createShoppingItem
+//:) 3 vypis ve formatu "id: nazev"
+//:? 4 seradit seznam podle abecedy pole nazev 
+
+// -- Prace v pristi hodine bude filtr polozek --
+// -- Prace v pristi hodine bude mazani polozek --
+
+vypisSeznam(seznam);
 
 function vypisSeznam(nakupniSeznam){ 
-
+    for(let polozka of nakupniSeznam) {
+        createShoppingItem(`${polozka.id}: ${polozka.nazev}`);
+    }
 }
