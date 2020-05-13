@@ -25,24 +25,6 @@ function clearDeleteList() {
     deleteList.innerHTML = ''
 }
 
-let seznam = [
-    { id: 0, nazev: "Banan" ,koupe: ["Patek", "Nedele", "Pondeli"] },
-    { id: 1, nazev: "Ananas",koupe: [ "Pondeli"]  },
-    { id: 2, nazev: "Meloun" },
-    { id: 5, nazev: "Hruska" }
-];
-
-let koupe = [
-    { id: 0, id_seznam:0, nazev: "Patek" },
-    { id: 2, id_seznam:0, nazev: "Nedele" },
-    { id: 1, id_seznam:1, nazev: "Pondeli" },
-];
-
-
-
-const btnAdd = document.querySelector("#btnAdd");
-btnAdd.addEventListener("click", pridejPolozku);
-
 
 function nejvyssiId() {
     let aktualneNejvyssiId = 0;
@@ -55,12 +37,9 @@ function nejvyssiId() {
 }
 
 
-
 function pridejPolozku() {
     const input = document.querySelector("#newItem");
     const value = input.value;
-
-
 
     const polozka = { id: nejvyssiId() + 1, nazev: value };
 
@@ -68,5 +47,23 @@ function pridejPolozku() {
     console.table(seznam);
 
     createShoppingItem(value)
+}
+
+
+let seznam = [
+    { id: 0, nazev: "Banan" },
+    { id: 1, nazev: "Ananas"},
+    { id: 2, nazev: "Meloun" },
+    { id: 5, nazev: "Hruska" }
+];
+
+
+const btnAdd = document.querySelector("#btnAdd");
+btnAdd.addEventListener("click", pridejPolozku);
+
+//1 nejak zovolat funkci vypisSeznam s argumentem seznam
+//2 aby funkce vypisSeznam vypsala jednotlive polozky
+
+function vypisSeznam(nakupniSeznam){ 
 
 }
